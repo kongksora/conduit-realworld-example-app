@@ -1524,3 +1524,41 @@ footer > .container {
   margin-right: 5px;
   cursor: pointer;
 }
+
+/* ============================================================================
+ * POPULAR TAGS — top 5 gold highlight
+ * ============================================================================ */
+
+.tag-popular {
+  background: #f0ad4e !important;
+  animation: breathe 1.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ============================================================================
+ * READ COUNT
+ * ============================================================================ */
+
+.read-count {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.read-count i {
+  margin-right: 2px;
+}
+
+/* ============================================================================
+ * ARTICLE WORD COUNT
+ * ============================================================================ */
+
+.article-word-count {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}

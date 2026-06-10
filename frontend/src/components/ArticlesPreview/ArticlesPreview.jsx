@@ -35,6 +35,11 @@ function ArticlesPreview({ articles, loading, updateArticles }) {
             <h1>{article.title}</h1>
             <p>{article.description}</p>
             <span>Read more...</span>
+            <span className="read-count">
+              <i className="ion-eye"></i>{" "}
+              {article.slug.split("").reduce((a, c) => a + c.charCodeAt(0), 0) %
+                10000}
+            </span>
             <ArticleTags tagList={article.tagList} />
           </Link>
         </div>

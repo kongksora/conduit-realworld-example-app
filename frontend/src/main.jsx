@@ -15,6 +15,7 @@ import Login from "./routes/Login";
 import NotFound from "./routes/NotFound";
 import Profile from "./routes/Profile/Profile";
 import ProfileArticles from "./routes/Profile/ProfileArticles";
+import ProfileAbout from "./routes/Profile/ProfileAbout";
 import ProfileFavArticles from "./routes/Profile/ProfileFavArticles";
 import Settings from "./routes/Settings";
 import SignUp from "./routes/SignUp";
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="profile/:username" element={<Profile />}>
               <Route index element={<ProfileArticles />} />
               <Route path="favorites" element={<ProfileFavArticles />} />
+              <Route path="about" element={<ProfileAbout />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
