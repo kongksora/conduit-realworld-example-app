@@ -3,7 +3,7 @@
 const { User } = require("../models");
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, _Sequelize) {
     const users = await User.findAll();
 
     const articles = Array(55)
@@ -23,7 +23,7 @@ module.exports = {
     await queryInterface.bulkInsert("Articles", articles, {});
   },
 
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface, _Sequelize) {
     await queryInterface.bulkDelete("Articles", null, {});
   },
 };
