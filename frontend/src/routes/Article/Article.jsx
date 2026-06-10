@@ -41,6 +41,12 @@ function Article() {
           <div className="col-md-12">
             {body && <Markdown options={{ forceBlock: true }}>{body}</Markdown>}
             <ArticleTags tagList={tagList} />
+            {body && (
+              <p className="article-word-count">
+                本文共 {body.replace(/\s/g, "").length} 字，预计阅读{" "}
+                {Math.max(1, Math.ceil(body.replace(/\s/g, "").length / 300))} 分钟
+              </p>
+            )}
           </div>
         </div>
 
