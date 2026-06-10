@@ -1057,6 +1057,28 @@ fieldset[disabled] a.btn {
   background: none;
 }
 
+.tag-default.tag-hot {
+  background: linear-gradient(135deg, #ffd700, #ffb800);
+  border-color: #e6a800;
+  color: #5c3d00;
+  font-weight: 500;
+  box-shadow: 0 0 8px rgba(255, 184, 0, 0.4);
+  animation: tag-breathe 2s ease-in-out infinite;
+}
+
+.tag-default.tag-hot i {
+  margin-right: 2px;
+}
+
+@keyframes tag-breathe {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(255, 184, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 184, 0, 0.7);
+  }
+}
+
 ul.tag-list {
   display: inline-block;
 }
@@ -1222,6 +1244,18 @@ footer .attribution {
   font-weight: 300;
   color: var(--text-light);
   vertical-align: middle;
+}
+
+.article-preview .preview-link .read-count {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-light);
+  vertical-align: middle;
+  margin-left: 0.75rem;
+}
+
+.article-preview .preview-link .read-count i {
+  margin-right: 2px;
 }
 
 .article-preview .preview-link ul {
@@ -1397,6 +1431,15 @@ footer > .container {
 
 .article-page .article-content ol ol ol {
   list-style: lower-roman;
+}
+
+.article-page .word-count {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 
 .article-page .article-actions {
