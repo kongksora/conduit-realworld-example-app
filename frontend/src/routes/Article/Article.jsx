@@ -6,6 +6,7 @@ import ArticlesButtons from "../../components/ArticlesButtons";
 import ArticleTags from "../../components/ArticleTags";
 import BannerContainer from "../../components/BannerContainer";
 import { useAuth } from "../../context/AuthContext";
+import { countWords, readingTime } from "../../helpers/wordCount";
 import getArticle from "../../services/getArticle";
 
 function Article() {
@@ -40,6 +41,12 @@ function Article() {
         <div className="row article-content">
           <div className="col-md-12">
             {body && <Markdown options={{ forceBlock: true }}>{body}</Markdown>}
+            {body && (
+              <p className="word-count">
+                本文共 {countWords(body)} 字，预计阅读{" "}
+                {readingTime(countWords(body))} 分钟
+              </p>
+            )}
             <ArticleTags tagList={tagList} />
           </div>
         </div>

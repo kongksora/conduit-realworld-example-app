@@ -3,6 +3,18 @@ import ArticleMeta from "../ArticleMeta";
 import ArticleTags from "../ArticleTags";
 import FavButton from "../FavButton";
 
+function fakeReadCount(slug) {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = (hash * 31 + slug.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash) % 99901 + 100;
+}
+
+function formatNumber(n) {
+  return n.toLocaleString("en-US");
+}
+
 function ArticlesPreview({ articles, loading, updateArticles }) {
   const handleFav = (article) => {
     const items = [...articles];
@@ -19,6 +31,9 @@ function ArticlesPreview({ articles, loading, updateArticles }) {
       return (
         <div className="article-preview" key={article.slug}>
           <ArticleMeta author={article.author} createdAt={article.createdAt}>
+            <span className="read-count" title="Reads">
+              <i className="ion-eye"></i> {formatNumber(fakeReadCount(article.slug))}
+            </span>
             <FavButton
               favorited={article.favorited}
               favoritesCount={article.favoritesCount}

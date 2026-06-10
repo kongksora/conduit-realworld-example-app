@@ -35,6 +35,8 @@ module.exports = [
         test: "readonly",
         expect: "readonly",
         it: "readonly",
+        beforeAll: "readonly",
+        afterAll: "readonly",
       },
     },
   },

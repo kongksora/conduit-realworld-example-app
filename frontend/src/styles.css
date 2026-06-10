@@ -1017,6 +1017,29 @@ fieldset[disabled] a.btn {
 }
 
 /* ============================================================================
+ * HOT TAG FLAME ANIMATION
+ * ============================================================================ */
+
+@keyframes flameFlicker {
+  0%   { background-color: #ff4500; box-shadow: 0 0 6px #ff4500; }
+  25%  { background-color: #ff6347; box-shadow: 0 0 10px #ff6347; }
+  50%  { background-color: #ffa500; box-shadow: 0 0 8px #ffa500; }
+  75%  { background-color: #ff8c00; box-shadow: 0 0 12px #ff8c00; }
+  100% { background-color: #ff4500; box-shadow: 0 0 6px #ff4500; }
+}
+
+.tag-hot {
+  animation: flameFlicker 1.5s infinite alternate;
+  color: #fff !important;
+  font-weight: 600;
+  border-color: transparent !important;
+}
+
+.tag-hot:hover {
+  animation: flameFlicker 0.8s infinite alternate;
+}
+
+/* ============================================================================
  * TAGS
  * ============================================================================ */
 
@@ -1239,6 +1262,19 @@ footer .attribution {
 
 .btn .counter {
   font-size: 0.8rem;
+}
+
+/* Read count in article preview meta */
+.read-count {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-right: 0.75rem;
+}
+
+.read-count i {
+  margin-right: 0.2rem;
 }
 
 /* ============================================================================
@@ -1513,6 +1549,17 @@ footer > .container {
 
 .profile-page .articles-toggle {
   margin: 1.5rem 0 -1px 0;
+}
+
+/* ============================================================================
+ * WORD COUNT
+ * ============================================================================ */
+
+.word-count {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+  font-style: italic;
 }
 
 /* ============================================================================
